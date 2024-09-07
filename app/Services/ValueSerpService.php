@@ -17,14 +17,18 @@ class ValueSerpService
 
     public function search($query)
     {
-        $query = "pizza";
-        $response = $this->client->get('https://api.valueserp.com/search', [
-            'query' => [
-                'q' => $query,
-                'api_key' => $this->apiKey
-            ]
-        ]);
+        if($query != ""){
+            $response = $this->client->get('https://api.valueserp.com/search', [
+                'query' => [
+                    'q' => $query,
+                    'api_key' => $this->apiKey
+                ]
+            ]);
 
-        return json_decode($response->getBody()->getContents(), true);
+            return json_decode($response->getBody()->getContents(), true);
+        }else{
+            return [];
+        }
+        
     }
 }
