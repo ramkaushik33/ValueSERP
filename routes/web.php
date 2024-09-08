@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('/search', [SearchController::class, 'showForm'])->name('search.form');
 Route::post('/search', [SearchController::class, 'handleSearch'])->name('search.handle');
+Route::get('/export-csv', [SearchController::class, 'exportToCsv']);

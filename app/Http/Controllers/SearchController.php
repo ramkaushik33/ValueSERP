@@ -30,4 +30,10 @@ class SearchController extends Controller
 
         return view('search.results', ['results' => $results]);
     }
+
+    public function exportToCsv()
+    {
+        $csvFilePath = storage_path('app\serp_results.csv');
+        return response()->download($csvFilePath)->deleteFileAfterSend(true);
+    }
 }
