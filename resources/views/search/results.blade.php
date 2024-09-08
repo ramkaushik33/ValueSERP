@@ -48,7 +48,11 @@
                             @foreach ($result as $obj)
                             <tr>
                                 <td>{{ $obj['title'] }}</td>
-                                <td>{{ $obj['link'] }}</td>
+                                <td>
+                                    <a href="{{ $obj['link'] }}" target="_blank">
+                                        {{ $obj['link'] }}
+                                    </a>
+                                </td>
                                 <td>{{ $obj['snippet'] }}</td>                                
                             </tr>
                             @endforeach
