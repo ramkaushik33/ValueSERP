@@ -59,7 +59,7 @@ class ValueSerpService
     public function storeCsv($structuredData)
     {
         // Open a file in write mode
-        $csvFile = fopen(storage_path('app/serp_results.csv'), 'w');
+        $csvFile = fopen(storage_path('app/serp_results.csv'), 'a');
 
         // Add the CSV headers
         fputcsv($csvFile, ['title', 'link', 'snippet']);
